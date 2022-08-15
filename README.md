@@ -7,6 +7,7 @@ then the API will be available on `localhost:8090`
 
 ## Choices
 Get all the choices that are usable for the UI.
+```shell
 GET: http://0.0.0.0:8090/choices
 Result: application/json
 [
@@ -15,9 +16,9 @@ Result: application/json
     "name": string [12] (rock, paper, scissors, lizard, spock)
   }
 ]
-
+```
 ## Choice
-Get a randomly generated choice
+Get a randomly generated choice.
 ```shell
 GET: http://0.0.0.0:8090/choice
 Result: application/json
@@ -27,7 +28,7 @@ Result: application/json
 }
 ```
 ## Play
-Play a round against a computer opponent
+Play a round against a computer opponent.
 ```shell
 POST: http://0.0.0.0:8090/play
 Data: application/json
@@ -43,7 +44,7 @@ Result: application/json
 ```
 ## Scoreboard
 ```shell
- A scoreboard with the 10 most recent results
+The scoreboard with the 10 most recent results.
 GET: http://0.0.0.0:8090/scoreboard
 Result: application/json
 [
@@ -62,7 +63,7 @@ Result: application/json
 ```
 ## Reset
 ```shell
-The scoreboard to be reset
+The scoreboard to be reset.
 DELETE: http://0.0.0.0:8090/reset
 Result: application/json
 {
