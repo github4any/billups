@@ -18,15 +18,17 @@ Result: application/json
 
 ## Choice
 Get a randomly generated choice
+```shell
 GET: http://0.0.0.0:8090/choice
 Result: application/json
 {
   "id": integer [1-5],
   "name" : string [12] (rock, paper, scissors, lizard, spock)
 }
-
+```
 ## Play
 Play a round against a computer opponent
+```shell
 POST: http://0.0.0.0:8090/play
 Data: application/json
 {
@@ -38,8 +40,9 @@ Result: application/json
   “player”: choice_id,
   “computer”:  choice_id
 }
-
+```
 ## Scoreboard
+```shell
  A scoreboard with the 10 most recent results
 GET: http://0.0.0.0:8090/scoreboard
 Result: application/json
@@ -56,11 +59,13 @@ Result: application/json
 		"computer": 1,
 		"timestamp": "2022-08-15T20:11:14.723241Z"
 	},
-
+```
 ## Reset
+```shell
 The scoreboard to be reset
 DELETE: http://0.0.0.0:8090/reset
 Result: application/json
 {
 	"result": true
 }
+```
