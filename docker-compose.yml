@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  api:
+    container_name: billups_api
+    image: blapi:latest
+    environment:
+      APP_PORT: 8090
+      DATABASE_URL: "postgresql://pguser:pgpass@db/pgdb?sslmode=disable"
+    ports:
+      - 8090:8090
+    depends_on:
+      - db
+
+  db:
+    container_name: billups_db
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_USER: pguser
+      POSTGRES_DB: pgdb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - 5431:5432
+
+volumes:
+  db_data:
