@@ -30,7 +30,7 @@ var buildTag string
 var (
 	// General
 	appPort            = env.MustInt("APP_PORT")
-	httpRequestTimeout = env.GetDuration("HTTP_REQUEST_TIMEOUT", 60*time.Second)
+	httpRequestTimeout = env.GetDuration("HTTP_REQUEST_TIMEOUT", 5*time.Second)
 
 	// DB
 	dbConnString   = env.MustString("DATABASE_URL")
